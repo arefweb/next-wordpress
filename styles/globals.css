@@ -1,0 +1,22 @@
+
+@font-face {
+  font-family: Vazir;
+  src: url("../public/fonts/Vazir.woff2");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: Vazir;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

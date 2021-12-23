@@ -1,0 +1,16 @@
+
+.post{
+  max-width: 1000px;
+  .featured-img{
+    position: relative;
+    height: 350px;
+    & img{
+      width: unset !important;
+      min-width: unset !important;
+    }
+  }
+  &__content{
+    text-align: justify;
+    line-height: 2;
+  }
+}
