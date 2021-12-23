@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import callAPI from '../../../../services/api';
 import { removeTags } from '../../../../functions/functions';
 import Image from "next/image";
+import Head from "next/head";
 
 const Post = ({data}) => {
   const router = useRouter();
@@ -15,19 +16,30 @@ const Post = ({data}) => {
   }
 
   return (
-    <main className="container post">
-      <div className="featured-img">
-        <Image
-          loader={myLoader}
-          src={data?.featured_img}
-          alt=""
-          layout="fill"
-          unoptimized
+    <div>
+      <Head>
+        <title>وبلاگ رمز ارز | عارف موحدزاده</title>
+        <meta
+          name="description"
+          content="اطلاعات و اخبار رمز ارز. نویسنده عارف موحدزاده"
         />
-      </div>
-      <h2 className="post__title">{removeTags(data?.title.rendered)}</h2>
-      <p className="post__content">{removeTags(data?.content.rendered)}</p>
-    </main>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <main className="container post">
+        <div className="featured-img">
+          <Image
+            loader={myLoader}
+            src={data?.featured_img}
+            alt=""
+            layout="fill"
+            unoptimized
+          />
+        </div>
+        <h2 className="post__title">{removeTags(data?.title.rendered)}</h2>
+        <p className="post__content">{removeTags(data?.content.rendered)}</p>
+      </main>
+    </div>
   );
 }
 
